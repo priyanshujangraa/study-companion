@@ -1,0 +1,225 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Study Companion</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div>
+<div class="eyebrow">B.TECH ME · SEMESTER 3</div>
+<h1>Study Companion</h1>
+</div>
+<div class="date" id="today"></div>
+</header>
+
+<nav id="nav">
+<button class="active" data-page="home">Home</button>
+<button data-page="analysis">Analysis</button>
+<button data-page="timer">Timer</button>
+<button data-page="profile">Profile</button>
+<button data-page="calculator">Calculator</button>
+</nav>
+
+<main>
+<section id="home" class="page active">
+<div class="welcome">
+<div class="eyebrow">YOUR STUDY SPACE</div>
+<h2 id="hello">Hello, Student</h2>
+<p>Build consistency one study session at a time.</p>
+</div>
+
+<div class="stats">
+<div class="stat">
+<span>Study time logged</span>
+<strong id="homeTotal">0h 0m</strong>
+</div>
+<div class="stat">
+<span>This week</span>
+<strong id="weekTotal">0h 0m</strong>
+</div>
+<div class="stat">
+<span>Weekly target</span>
+<strong>21 hours</strong>
+</div>
+</div>
+
+<h3>Today's suggested plan</h3>
+<div id="todayPlan" class="cards"></div>
+
+<h3>Your subjects</h3>
+<div id="subjectQuick" class="subject-list"></div>
+
+<p class="note">
+Study guidance is a starting roadmap based on your PDFs and timetable.
+Confirm exact topics with your SRM syllabus.
+</p>
+</section>
+
+<section id="analysis" class="page">
+<h2>Study analysis</h2>
+<p class="muted">Recommended weekly self-study time.</p>
+
+<div class="stats">
+<div class="stat">
+<span>Weekly target</span>
+<strong>21h</strong>
+</div>
+<div class="stat">
+<span>Completed</span>
+<strong id="analysisDone">0h 0m</strong>
+</div>
+<div class="stat">
+<span>Completion</span>
+<strong id="percent">0%</strong>
+</div>
+</div>
+
+<div id="analysisList" class="cards"></div>
+
+<h3>Study roadmaps</h3>
+<div id="roadmaps" class="roadmaps"></div>
+
+<h3>Subjects without an uploaded textbook</h3>
+
+<div class="card">
+<b>Effective Communication Skills</b>
+<p>Study grammar, vocabulary, reading comprehension, writing, formal emails, presentations, group discussion and interview practice.</p>
+</div>
+
+<div class="card">
+<b>Industry Automation Level-I (Lab)</b>
+<p>Study safety, equipment identification, wiring diagrams, sensors, actuators, PLC basics and practical experiments using your lab manual.</p>
+</div>
+
+<div class="card">
+<b>Manufacturing Process Lab & Strength of Materials Lab</b>
+<p>Prepare aim, apparatus, diagram, theory, formula, procedure, observations, calculations and results for each experiment.</p>
+</div>
+</section>
+
+<section id="timer" class="page">
+<h2>Study timer</h2>
+<p class="muted">Choose a subject and start studying.</p>
+
+<div class="card timer-card">
+<label for="timerSubject">Subject</label>
+<select id="timerSubject"></select>
+
+<div class="clock" id="clock">00:00:00</div>
+
+<div class="timer-actions">
+<button id="startBtn" class="primary">Start</button>
+<button id="pauseBtn">Pause</button>
+<button id="saveBtn">Save session</button>
+<button id="resetBtn">Reset</button>
+</div>
+
+<div class="muted small" id="timerStatus">Timer is ready.</div>
+</div>
+
+<h3>Study history</h3>
+<div id="history" class="history"></div>
+</section>
+
+<section id="profile" class="page">
+<h2>Profile</h2>
+
+<div class="card profile-card">
+<label for="name">Name</label>
+<input id="name" placeholder="Enter your name">
+
+<label for="age">Age</label>
+<input id="age" type="number" min="1" max="100" placeholder="Enter your age">
+
+<button id="saveProfile" class="primary">Save profile</button>
+</div>
+
+<div class="stats">
+<div class="stat">
+<span>Total hours studied</span>
+<strong id="profileTotal">0h 0m</strong>
+</div>
+<div class="stat">
+<span>Sessions completed</span>
+<strong id="sessionCount">0</strong>
+</div>
+<div class="stat">
+<span>Subjects tracked</span>
+<strong>10</strong>
+</div>
+</div>
+
+<p class="note">
+Your profile and study sessions are saved on this device.
+</p>
+</section>
+
+<section id="calculator" class="page">
+<h2>Scientific calculator</h2>
+
+<div class="calc card">
+<input id="display" class="display" value="0" inputmode="decimal">
+
+<div class="calc-grid" id="keys">
+<button data-v="sin(">sin</button>
+<button data-v="cos(">cos</button>
+<button data-v="tan(">tan</button>
+<button data-v="sqrt(">√</button>
+<button data-v="(">(</button>
+<button data-v=")">)</button>
+
+<button data-v="asin(">sin⁻¹</button>
+<button data-v="acos(">cos⁻¹</button>
+<button data-v="atan(">tan⁻¹</button>
+<button data-v="log(">log</button>
+<button data-v="ln(">ln</button>
+<button data-v="pi">π</button>
+
+<button data-v="7">7</button>
+<button data-v="8">8</button>
+<button data-v="9">9</button>
+<button data-v="/">÷</button>
+<button data-v="^">xʸ</button>
+<button data-v="!">x!</button>
+
+<button data-v="4">4</button>
+<button data-v="5">5</button>
+<button data-v="6">6</button>
+<button data-v="*">×</button>
+<button data-v="e">e</button>
+<button data-v="^2">x²</button>
+
+<button data-v="1">1</button>
+<button data-v="2">2</button>
+<button data-v="3">3</button>
+<button data-v="-">−</button>
+<button data-v="%">%</button>
+<button data-v="Ans">Ans</button>
+
+<button data-v="0">0</button>
+<button data-v=".">.</button>
+<button data-v="+">+</button>
+<button data-action="back">⌫</button>
+<button data-action="clear">AC</button>
+<button data-action="equals" class="primary">=</button>
+</div>
+
+<p class="muted small">
+Trigonometric functions use degrees.
+</p>
+</div>
+</section>
+</main>
+
+<footer>
+Simple offline study tool
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
